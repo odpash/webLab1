@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>WEB | Lab1 | Pashchenko</title>
+    <meta charset="UTF-8">
+    <!-- Imports -->
+
+    <link href="css/description.css" rel="stylesheet">
+    <link href="css/graphic.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/tables.css" rel="stylesheet">
+    <link href="css/codeflake.css" rel="stylesheet">
+</head>
+
+<body>
+<table>
+
+    <div id="codeflakeContainer">
+        <span class="codeflake"></span>
+    </div>
+
+    <div class="description">
+        by: Пащенко Олег Дмитриевич | group: P32141 | variant: 1412
+    </div>
+
+</table>
+
+
+
+
+<div class="frontTables" style="left: 5%">
+    <div align="center">
+        <canvas class="canvas" id="canvas" width="300px" height="300px"></canvas>
+    </div>
+    <div align="center" id="inputs">
+        <label>X</label>
+        <select required="" id="x" name="x">
+            <option value=""></option>
+            <option value="-3">-3</option>
+            <option value="-2">-2</option>
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br/>
+        <label>Y</label>
+        <input type="text" required="" id="y" name="y" placeholder="-3...5">
+        <br/>
+        <label>R</label>
+        <input type="text" required="" id="r" name="r" placeholder="2...5">
+        <br/>
+
+        <div id="bottoms">
+            <input align="left" type="submit" name="button" id="button" value="send" onclick="validate()">
+            <input align="right" type="reset" name="clear" id="clear" value="reset" onclick="clear_table()">
+        </div>
+    </div>
+</div>
+
+<table class="frontTables" id="result" style="
+        right: 5%;">
+    <thead>
+    <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Result</th>
+        <th>Script time</th>
+        <th>Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+</body>
+
+<script src="js/codeflake.js"></script>
+<script src="js/communication.js"></script>
+<script src="js/table.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/graphic.js"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</html>

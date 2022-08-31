@@ -1,0 +1,15 @@
+#codeflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+
+.codeflake {
+    position: fixed;
+    color: green;
+    font-size: 18px;
+    user-select: none;
+}
+
+
