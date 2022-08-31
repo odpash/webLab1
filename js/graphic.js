@@ -4,8 +4,8 @@ draw("R", false);
 
 let r_input = document.getElementById("r");
 r_input.onchange = function () {
-    console.log("123");
     draw(document.getElementById("r").value, true);
+
 }
 
 
