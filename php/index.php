@@ -32,12 +32,13 @@ $time = date('H:i:s', time() - $time_zone_offset * 60);
 
 $start_time = round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 8);
 $flag = check_square($x, $y, $r) || check_triangle($x, $y, $r) || check_circle($x, $y, $r);
-$res = "{" .
-    "\"x\":\"$x\"," .
-    "\"y\":\"$y\"," .
-    "\"r\":\"$r\"," .
-    "\"start_time\":\"$start_time\"," .
-    "\"time\":\"$time\"," .
-    "\"result\":\"$flag\"" .
-    "}";
+
+$res = "<tr>" .
+    "<td> $x </td>" .
+    "<td> $y </td>" .
+    "<td> $r </td>" .
+    "<td> $flag </td>" .
+    "<td> $start_time </td>" .
+    "<td> $time </td>" .
+    "</tr>";
 echo $res;

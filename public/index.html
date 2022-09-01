@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <!-- Imports -->
 
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <link href="../css/description.css" rel="stylesheet">
     <link href="../css/graphic.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
@@ -14,70 +16,97 @@
 
 <body>
 <table>
-
     <div id="codeflakeContainer">
         <span class="codeflake"></span>
     </div>
-
     <div class="description">
         by: Пащенко Олег Дмитриевич | group: P32141 | variant: 1412
     </div>
 
-</table>
 
-
-
-
-<div class="frontTables" style="left: 5%">
-    <div align="center">
-        <canvas class="canvas" id="canvas" width="300px" height="300px"></canvas>
-    </div>
-    <form align="center" id="form">
-        <label>X</label>
-        <select required="" id="x" name="x">
-            <option value=""></option>
-            <option value="-3">-3</option>
-            <option value="-2">-2</option>
-            <option value="-1">-1</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <br/>
-        <label>Y</label>
-        <input type="text" required="" id="y" name="y" placeholder="-3...5">
-        <br/>
-        <label>R</label>
-        <input type="text" required="" id="r" name="r" placeholder="2...5">
-        <br/>
-
-        <div id="bottoms">
-            <input align="left" type="submit" name="button" id="button" value="send" >
-            <input align="right" type="reset" name="clear" id="clear" value="reset" onclick="clear_table()">
-        </div>
-    </form>
-</div>
-
-<table class="frontTables" id="result" style="
-        right: 5%;">
-    <thead>
     <tr>
-        <th>X</th>
-        <th>Y</th>
-        <th>R</th>
-        <th>Result</th>
-        <th>Script time</th>
-        <th>Time</th>
+        <td>
+            <table class="frontTables" id="result" style="
+        right: 5%; height: 550px;">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Result</th>
+                    <th>Script time</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody style="
+  overflow: auto;">
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+
+
+            <table class="frontTables" style="left: 5%">
+                <tr>
+                    <td align="center">
+                        <canvas class="canvas" id="canvas" width="300px" height="300px"></canvas>
+                    </td>
+                </tr>
+
+                <tr>
+                    <form align="center" id="form">
+                        <td>
+                            <table>
+
+                                <td>
+                                    <label>X</label>
+                                    <select required="" id="x" name="x">
+                                        <option value=""></option>
+                                        <option value="-3">-3</option>
+                                        <option value="-2">-2</option>
+                                        <option value="-1">-1</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <label>Y</label>
+                                    <input type="text" required="" id="y" name="y" placeholder="-3...5">
+                                </td>
+
+                                <td>
+                                    <label>R</label>
+                                    <input type="text" required="" id="r" name="r" placeholder="2...5">
+                                </td>
+                            </table>
+
+                            <br/>
+                            <table id="bottoms" align="center">
+                                <tr>
+                                    <td>
+                                        <input type="submit" name="button" id="button" value="send">
+                                    </td>
+                                    <td>
+                                        <input type="reset" name="clear" id="clear" value="reset"
+                                               onclick="clear_table()">
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                    </form>
+                </tr>
+            </table>
+        </td>
+
+
     </tr>
-    </thead>
-    <tbody>
-    </tbody>
+
 </table>
-
-
 
 </body>
 
@@ -86,7 +115,4 @@
 <script src="../js/table.js"></script>
 <script src="../js/validator.js"></script>
 <script src="../js/graphic.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 </html>
