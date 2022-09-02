@@ -7,7 +7,8 @@ r_input.onchange = function () {
     draw(document.getElementById("r").value, true);
 
 }
-
+// TODO: функц прог в js (функции высшего порядка, карирование, замыкание), преимущества перед ООП
+// options, сессии,
 
 function draw(character, isDigit) {
     context.clearRect(0, 0, 300, 300);
@@ -105,6 +106,3 @@ function drawCharacters(character, isDigit) {
     context.fillText(dividedCharacter, 90, 165);
     context.fillText(character, 30, 165);
 }
-
-context.lineWidth = 2;
-context.strokeStyle = 'black';

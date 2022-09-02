@@ -8,7 +8,7 @@ function add_row(data) {
 
 
 
-function load_table() {
+function load_table() { // TODO: Cookie, где и как взаимодействовать
     table.innerHTML += document.cookie.replace("data=;", "").replace("None", "");
 }
 

@@ -1,15 +1,15 @@
-
 @keyframes gradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
+
 .frontTables {
     z-index: 1000000;
     border-radius: 3%;
@@ -22,16 +22,26 @@
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    font-family: "Courier New",serif;
+    font-family: "Courier New", serif;
     color: white;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
 .frontTables th,
 .frontTables td {
     padding: 12px 15px;
     border: 1px solid black
 }
+
 .frontTables tbody tr {
     border-bottom: 1px solid #dddddd;
+}
+
+#result {
+    right: 5%;
+    height: 550px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block
 }

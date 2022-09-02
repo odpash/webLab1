@@ -2,32 +2,22 @@ const codeflakes = [];
 let browserWidth;
 let browserHeight;
 const numberOfcodeflakes = 250;
-let resetPosition = false;
-let enableAnimations = false;
-const reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+window.addEventListener("DOMContentLoaded", generatecodeflakes);
 
-function setAccessibilityState() {
-    enableAnimations = !reduceMotionQuery.matches;
-}
-
-setAccessibilityState();
-reduceMotionQuery.addListener(setAccessibilityState);
-setup();
-
-
-
-function setup() {
-    if (enableAnimations) {
-        window.addEventListener("DOMContentLoaded", generatecodeflakes, false);
+class codeFlake {
+    constructor(element) {
+        this.xPos = this.getPosition(0, browserWidth);
+        this.yPos = this.getPosition(0, browserHeight);
+        this.scale = 1;
+        this.element = element;
     }
+
+    getPosition(offset, size) {
+        return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+    }
+
 }
 
-function codeFlake(element, xPos, yPos) {
-    this.element = element;
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.scale = 1;
-}
 
 codeFlake.prototype.update = function () {
     this.yPos += 3
@@ -42,7 +32,7 @@ function setTransform(xPos, yPos, scale, el) {
 }
 
 function generatecodeflakes() {
-    const originalcodeflake = document.querySelector(".codeflake");
+    const originalcodeflake = document.querySelector(".codeFlake");
     const codeflakeContainer = originalcodeflake.parentNode;
     codeflakeContainer.style.display = "block";
     browserWidth = document.documentElement.clientWidth;
@@ -51,11 +41,7 @@ function generatecodeflakes() {
         originalcodeflake.innerHTML = Math.floor(Math.random() * 2);
         const codeflakeClone = originalcodeflake.cloneNode(true);
         codeflakeContainer.appendChild(codeflakeClone);
-        const initialXPos = getPosition(0, browserWidth);
-        const initialYPos = getPosition(0, browserHeight);
-        const codeflakeObject = new codeFlake(codeflakeClone,
-            initialXPos,
-            initialYPos);
+        const codeflakeObject = new codeFlake(codeflakeClone);
         codeflakes.push(codeflakeObject);
     }
     codeflakeContainer.removeChild(originalcodeflake);
@@ -63,31 +49,13 @@ function generatecodeflakes() {
 }
 
 function movecodeflakes() {
-    let codeflake;
+    let codeFlake;
     let i;
-    if (enableAnimations) {
-        for (i = 0; i < codeflakes.length; i++) {
-            codeflake = codeflakes[i];
-            codeflake.update();
-        }
-    }
-    if (resetPosition) {
-        browserWidth = document.documentElement.clientWidth;
-        browserHeight = document.documentElement.clientHeight;
-
-        for (i = 0; i < codeflakes.length; i++) {
-            codeflake = codeflakes[i];
-
-            codeflake.xPos = getPosition(0, browserWidth);
-            codeflake.yPos = getPosition(0, browserHeight);
-        }
-
-        resetPosition = false;
+    for (i = 0; i < codeflakes.length; i++) {
+        codeFlake = codeflakes[i];
+        codeFlake.update();
     }
 
     requestAnimationFrame(movecodeflakes);
 }
 
-function getPosition(offset, size) {
-    return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
-}
