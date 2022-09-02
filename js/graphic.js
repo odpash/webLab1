@@ -108,22 +108,3 @@ function drawCharacters(character, isDigit) {
 
 context.lineWidth = 2;
 context.strokeStyle = 'black';
-
-
-function draw_point(x, y, r, isHit) {
-    context.clearRect(0, 0, 300, 300);
-    draw();
-    if (!isHit) {
-        context.fillStyle = "rgb(141,31,70)";
-        context.strokeStyle = "rgb(136,39,75)";
-    } else {
-        context.fillStyle = "rgb(98,208,103)";
-        context.strokeStyle = "rgb(65,215,69)";
-    }
-    context.beginPath();
-    context.arc(150 + x * 136 / r, 150 - 136 * y / r, 2, 0, 2 * Math.PI);
-    context.fill();
-    context.stroke();
-    context.closePath();
-
-}
