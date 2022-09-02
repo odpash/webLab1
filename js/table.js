@@ -20,9 +20,8 @@ function clear_table() {
         "<th>X</th>" +
         "<th>Y</th>" +
         "<th>R</th>" +
-        "<th>Result</th>" +
+        "<th>Results</th>" +
         "<th>Script time</th>" +
         "<th>Time</th>" +
         "</tr></thead><tbody></tbody>";
-
 }

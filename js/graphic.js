@@ -106,45 +106,9 @@ function drawCharacters(character, isDigit) {
     context.fillText(character, 30, 165);
 }
 
-// function relMouseCoords(event) {
-//     var totalOffsetX = 0;
-//     var totalOffsetY = 0;
-//     var canvasX = 0;
-//     var canvasY = 0;
-//     var currentElement = this;
-//
-//     do {
-//         totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
-//         totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
-//     }
-//     while (currentElement = currentElement.offsetParent)
-//
-//     canvasX = event.pageX - totalOffsetX;
-//     canvasY = event.pageY - totalOffsetY;
-//
-//     return {x: canvasX, y: canvasY}
-// }
-//
-// HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
-
-
 context.lineWidth = 2;
 context.strokeStyle = 'black';
 
-
-// function draw_point() {
-//     coords = localStorage.getItem("coords").split(",");
-//     x = coords[0];
-//     y = coords[1];
-//     r = coords[2];
-//     isHit = coords[3];
-//     context.beginPath();
-//     context.arc(150 + x * 136 / r, 150 - 136 * y / r, 2, 0, 2 * Math.PI);
-//     context.fill();
-//     context.stroke();
-//     context.closePath();
-//
-// }
 
 function draw_point(x, y, r, isHit) {
     context.clearRect(0, 0, 300, 300);

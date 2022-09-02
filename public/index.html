@@ -27,19 +27,19 @@
     <tr>
         <td>
             <table class="frontTables" id="result" style="
-        right: 5%; height: 550px;">
+        right: 5%; height: 550px;overflow-x: hidden;
+overflow-y: auto; display: block">
                 <thead>
                 <tr>
                     <th>X</th>
                     <th>Y</th>
                     <th>R</th>
-                    <th>Result</th>
+                    <th>Results</th>
                     <th>Script time</th>
                     <th>Time</th>
                 </tr>
                 </thead>
-                <tbody style="
-  overflow: auto;">
+                <tbody>
                 </tbody>
             </table>
         </td>
@@ -76,12 +76,12 @@
                                 </td>
                                 <td>
                                     <label>Y</label>
-                                    <input type="text" required="" id="y" name="y" placeholder="-3...5">
+                                    <input style="width: 100px" type="number" required="" id="y" name="y" min="-3" max="5" step="0.1" placeholder="-3...5">
                                 </td>
 
                                 <td>
                                     <label>R</label>
-                                    <input type="text" required="" id="r" name="r" placeholder="2...5">
+                                    <input style="width: 100px;" type="number" required="" id="r" name="r" max="5" min="2" step="0.1" placeholder="2...5">
                                 </td>
                             </table>
 
@@ -110,7 +110,7 @@
 
 </body>
 
-<script src="../js/codeflake.js"></script>
+<script src="../js/codeFlake.js"></script>
 <script src="../js/communication.js"></script>
 <script src="../js/table.js"></script>
 <script src="../js/validator.js"></script>

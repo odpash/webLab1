@@ -23,7 +23,6 @@ function send() {
         },
         success: function (data) {
             button.disabled = false;
-            console.log(data);
             add_row(data);        },
     });
 }
